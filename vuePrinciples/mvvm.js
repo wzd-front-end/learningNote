@@ -11,8 +11,9 @@ function MVVM(options) {
     me._initComputed();
 
     //新建一个发布者，劫持监听所有属性的变化，一旦发生改变通知订阅者
+    observe(data, this);
 
-
+    this.$compile = new Compile(options.el || document.body, this)
 }
 
 MVVM.prototype = {
