@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c124d97f-17ff-45d2-8e0d-54b7ad89ea22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vuePrinciples/compile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vuePrinciples/watcher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,6 +17,24 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="108" column="19" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePrinciples/watcher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="37" column="18" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -26,19 +44,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePrinciples/observer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
-              <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+            <state relative-caret-position="443">
+              <caret line="65" column="18" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -52,6 +61,17 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>addSub</find>
+      <find>subs</find>
+      <find>depend</find>
+      <find>Watcher</find>
+      <find>cb</find>
+      <find>addDep</find>
+      <find>target</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -63,6 +83,7 @@
         <option value="$PROJECT_DIR$/vuePrinciples/observer.js" />
         <option value="$PROJECT_DIR$/vuePrinciples/mvvm.js" />
         <option value="$PROJECT_DIR$/vuePrinciples/compile.js" />
+        <option value="$PROJECT_DIR$/vuePrinciples/watcher.js" />
       </list>
     </option>
   </component>
@@ -131,7 +152,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551866364789</updated>
-      <workItem from="1551866365982" duration="15676000" />
+      <workItem from="1551866365982" duration="21866000" />
     </task>
     <task id="LOCAL-00001" summary="新建mvvm和observer">
       <created>1551866410989</created>
@@ -154,11 +175,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551924413277</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="新建compile">
+      <created>1551946019422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551946019422</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15676000" />
+    <option name="totallyTimeSpent" value="21866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -188,7 +216,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新建mvvm和observer" />
-    <option name="LAST_COMMIT_MESSAGE" value="新建mvvm和observer" />
+    <MESSAGE value="新建compile" />
+    <option name="LAST_COMMIT_MESSAGE" value="新建compile" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vuePrinciple/mvvm.js">
@@ -205,6 +234,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="108" column="19" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -212,17 +248,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuePrinciples/observer.js">
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/watcher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        <state relative-caret-position="550">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/observer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="6" />
+        <state relative-caret-position="443">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
         </state>
       </provider>
     </entry>
