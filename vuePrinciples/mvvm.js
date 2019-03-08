@@ -17,6 +17,9 @@ function MVVM(options) {
 }
 
 MVVM.prototype = {
+    $watch: function(key, cb){
+        new Watcher(this, key, cb);
+    },
     _proxyData: function (key, setter, getter) {
         var me = this;
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c124d97f-17ff-45d2-8e0d-54b7ad89ea22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vuePrinciples/watcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vuePrinciples/mvvm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuePrinciples/compile.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuePrinciples/compile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuePrinciples/mvvm.js" beforeDir="false" afterPath="$PROJECT_DIR$/vuePrinciples/mvvm.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,12 +17,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="108" column="19" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="19" />
+            <state relative-caret-position="-22">
+              <caret line="128" column="24" selection-start-line="128" selection-start-column="15" selection-end-line="128" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -28,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePrinciples/watcher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="37" column="18" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="18" />
+            <state relative-caret-position="352">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -37,17 +39,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vuePrinciples/observer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
+            <state relative-caret-position="377">
               <caret line="65" column="18" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,6 +72,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -81,9 +96,10 @@
         <option value="$PROJECT_DIR$/vuePrinciple/mvvm.js" />
         <option value="$PROJECT_DIR$/vuePrinciple/observer.js" />
         <option value="$PROJECT_DIR$/vuePrinciples/observer.js" />
-        <option value="$PROJECT_DIR$/vuePrinciples/mvvm.js" />
-        <option value="$PROJECT_DIR$/vuePrinciples/compile.js" />
         <option value="$PROJECT_DIR$/vuePrinciples/watcher.js" />
+        <option value="$PROJECT_DIR$/vuePrinciples/mvvm.js" />
+        <option value="$PROJECT_DIR$/vuePrinciples/mvvm.html" />
+        <option value="$PROJECT_DIR$/vuePrinciples/compile.js" />
       </list>
     </option>
   </component>
@@ -118,6 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -153,6 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1551866364789</updated>
       <workItem from="1551866365982" duration="21866000" />
+      <workItem from="1552007689229" duration="6727000" />
     </task>
     <task id="LOCAL-00001" summary="新建mvvm和observer">
       <created>1551866410989</created>
@@ -186,19 +204,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21866000" />
+    <option name="totallyTimeSpent" value="28593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16385669" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -206,6 +220,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -220,45 +238,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="新建compile" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vuePrinciple/mvvm.js">
+    <entry file="file://$PROJECT_DIR$/vuePrinciple/mvvm.js" />
+    <entry file="file://$PROJECT_DIR$/vuePrinciple/observer.js" />
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/observer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePrinciple/observer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="108" column="19" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="66" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+        <state relative-caret-position="377">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vuePrinciples/watcher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="18" />
+        <state relative-caret-position="352">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vuePrinciples/observer.js">
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="18" />
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/mvvm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vuePrinciples/compile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="128" column="24" selection-start-line="128" selection-start-column="15" selection-end-line="128" selection-end-column="24" />
         </state>
       </provider>
     </entry>

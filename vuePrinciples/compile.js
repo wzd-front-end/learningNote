@@ -20,6 +20,7 @@ Compile.prototype = {
     },
 
     init: function () {
+
         this.compileElement(this.$fragment);
     },
 
@@ -33,7 +34,9 @@ Compile.prototype = {
 
             if (me.isElementNode(node)) {
                 me.compile(node);
+
             } else if (me.isTextNode(node) && reg.test(text)) {
+
                 me.compileText(node, RegExp.$1);
             }
 
@@ -112,18 +115,20 @@ var compileUtil = {
     },
 
     model: function(node, vm, exp){
+        console.log(exp)
         var me = this, val = this._getVMVal(vm, exp);
         me.bind(node, vm, exp, 'model');
 
         node.addEventListener('input',function (e) {
             var newValue = e.target.value;
 
+
             if(val === newValue){
                 return;
             }
-
             me._setVMVal(vm, exp, newValue);
             val = newValue;
+            console.log(val)
         });
     },
 
@@ -152,7 +157,7 @@ var compileUtil = {
             if(i < exp.length - 1){
                 val=val[k];
             }else {
-                val=value;
+                val[k] = value;
             }
         });
     }
@@ -160,6 +165,7 @@ var compileUtil = {
 
 var updater = {
     textUpdater: function (node, value) {
+
         node.textContent = typeof value == 'undefined' ? '' : value;
     },
 
