@@ -4,7 +4,7 @@ function List() {
     this.dataStore = [];
     this.clear = clear;
     this.find = find;
-    this.toString = toString();
+    this.toString = toString;
     this.insert = insert;
     this.append = append;
     this.remove = remove;
@@ -53,7 +53,7 @@ function List() {
 
     //
     function toString() {
-
+        return this.dataStore.toString();
     }
 
     //向列表中插入一个元素
@@ -117,6 +117,12 @@ function List() {
     }
 }
 
+
+var list = new List();
+list.append("1");
+list.append("2");
+list.append("3");
+console.log(list.toString())
 
 
 
