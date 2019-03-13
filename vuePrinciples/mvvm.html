@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-    <input type="text" v-model="someStr">
+    <input type="text" v-model="someStrs">
     <input type="text" v-model="child.someStr">
     <p>{{ getHelloWord }}</p>
     <p v-html="htmlStr"></p>
@@ -17,11 +17,10 @@
 <script src="./compile.js"></script>
 <script src="./mvvm.js"></script>
 <script>
-
     var vm = new MVVM({
         el: '#app',
         data: {
-            someStr: 'hello ',
+            someStrs: 'hello ',
             className: 'btn',
             htmlStr: '<span style="color: #f00;">red</span>',
             child: {
@@ -30,8 +29,7 @@
         },
         computed: {
             getHelloWord: function() {
-
-                return this.someStr + this.child.someStr;
+                return this.someStrs + this.child.someStr;
             }
         },
         methods: {
@@ -40,9 +38,6 @@
                 this.child.someStr = randomStrArr[parseInt(Math.random() * 3)];
             }
         }
-    });
-    vm.$watch('child.someStr', function() {
-        // console.log(arguments);
     });
 </script>
 </body>

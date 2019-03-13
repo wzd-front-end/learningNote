@@ -31,7 +31,7 @@ MVVM.prototype = {
                     return me._data[key];
                 },
                 set: function (newVal) {
-                    me._data = newVal;
+                    me._data[key] = newVal;
                 }
             })
     },

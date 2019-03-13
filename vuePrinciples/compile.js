@@ -115,20 +115,17 @@ var compileUtil = {
     },
 
     model: function(node, vm, exp){
-        console.log(exp)
         var me = this, val = this._getVMVal(vm, exp);
         me.bind(node, vm, exp, 'model');
 
         node.addEventListener('input',function (e) {
             var newValue = e.target.value;
-
-
             if(val === newValue){
                 return;
             }
             me._setVMVal(vm, exp, newValue);
             val = newValue;
-            console.log(val)
+
         });
     },
 
@@ -156,6 +153,7 @@ var compileUtil = {
         exp.forEach(function (k, i) {
             if(i < exp.length - 1){
                 val=val[k];
+
             }else {
                 val[k] = value;
             }
@@ -165,7 +163,6 @@ var compileUtil = {
 
 var updater = {
     textUpdater: function (node, value) {
-
         node.textContent = typeof value == 'undefined' ? '' : value;
     },
 
