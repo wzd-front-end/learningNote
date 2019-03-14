@@ -102,7 +102,7 @@ cities.display();
 console.log("链表反向打印");
 cities.dispReverse();
 
-
+//循环链表，实际是将head一直传递下去，使得最后一项的next 指向head
 
 
 
