@@ -5,7 +5,11 @@ function HashTable() {
   this.simpleHash = simpleHash;
   this.betterHash = betterHash;
   this.showDistro = showDistro;
+  this.buildChains = buildChains;
   this.put = put;
+  this.get = get;
+
+  this.buildChains()
 
   function simpleHash(data) {
     var total = 0;
@@ -28,15 +32,25 @@ function HashTable() {
   function showDistro() {
     var n = 0;
     for (var i = 0; i < this.table.length; ++i) {
-      if (this.table[i] != undefined) {
+      if (this.table[i][0] != undefined) {
         print(i + ": " + this.table[i]);
       }
     }
   }
 
+  function buildChains() {
+    for (var i = 0; i < this.table.length; ++i) {
+    this.table[i] = new Array();
+    }
+    }
+
   function put(data) {
-    var pos = this.simpleHash(data);
-    this.table[pos] = data
+    var pos = this.betterHash(data);
+    this.table[pos].push(data)
+  }
+
+  function get(key) {
+    return this.table[this.betterHash(key)]
   }
 
 }
