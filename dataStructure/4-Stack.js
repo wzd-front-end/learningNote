@@ -1,4 +1,4 @@
-function Stack() {
+function 3() {
     this.dataStore = [];
     this.top = 0;
     this.push = push;
@@ -18,11 +18,11 @@ function Stack() {
     function peek() {
         return this.dataStore[this.top-1]
     }
-    
+
     function length() {
         return this.top;
     }
-    
+
     function clear() {
         this.dataStore = [];
         this.top = 0;

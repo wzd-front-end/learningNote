@@ -1,5 +1,5 @@
 
-function Dictionary() {
+function 7() {
     this.dataStore = new Array();
     this.add = add;
     this.find = find;
@@ -45,7 +45,7 @@ function Dictionary() {
     }
 
 }
-var pbook = new Dictionary();
+var pbook = new 7();
 pbook.add("Mike","123");
 pbook.add("David", "345");
 pbook.add("Cynthia", "456");

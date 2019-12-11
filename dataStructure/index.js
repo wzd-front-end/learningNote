@@ -1,5 +1,5 @@
 var fs = require('fs');
-var Queue = require('./queue').Queue;
+var Queue = require('./5-Queue').Queue;
 
 function Dancer(name, sex) {
     this.name = name;

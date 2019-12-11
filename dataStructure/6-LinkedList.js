@@ -22,23 +22,23 @@ function LList() {
 
     function find(item) {
         var currNode = this.head;
-        
+
         while (currNode.element != item){
             currNode = currNode.next;
         }
 
         return currNode;
     }
-    
+
     function insert(newElement, item) {
         var newNode = new Node(newElement);
-        var  current = this.find(item);
+        var current = this.find(item);
 
         newNode.next = current.next;
         newNode.previous = current;//双向链表元素前置值设置
         current.next = newNode;
     }
-    
+
     function display() {
         var currNode = this.head;
         while (!(currNode.next == null)){
@@ -69,7 +69,7 @@ function LList() {
         //     prevNode.next = prevNode.next.next;//该句用于解决单向链表删除值得方法
         // }
     }
-    
+
     function findLast() {
         var currNode =this.head;
         while (!(currNode.next == null)){
@@ -77,7 +77,7 @@ function LList() {
         }
         return currNode;
     }
-    
+
     function dispReverse() {
         var currNode = this.findLast();
         while (!(currNode.previous == null)){

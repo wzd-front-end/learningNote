@@ -1,4 +1,4 @@
-function List() {
+function 2() {
     this.listSize = 0;
     this.pos = 0;
     this.dataStore = [];
@@ -118,11 +118,11 @@ function List() {
 }
 
 
-var list = new List();
-list.append("1");
-list.append("2");
-list.append("3");
-console.log(list.toString())
+var 3 = new 2();
+3.append("1");
+3.append("2");
+3.append("3");
+console.log(3.toString())
 
 
 
