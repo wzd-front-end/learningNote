@@ -10,15 +10,40 @@ function Set() {
   this.add = add;
   this.remove = remove;
   this.size = size;
+  this.contains = contains;
   this.union = union;
   this.intersect = intersect;
   this.subset = subset;
   this.difference = difference;
+  this.higher = higher;
+  this.lower = lower;
   this.show = show;
 
   function add(data) {
     if (this.dataStore.indexOf(data) < 0) {
-      this.dataStore.push(data)
+      // 增加排序算法
+      var len = this.size()
+      if (len <= 0) {
+        this.dataStore.unshift(data)
+      } else {
+        for (var i = 0; i < len; i++) {
+          if (i === (len - 1)) {
+            if (data > this.dataStore[i]) {
+              this.dataStore.push(data)
+            } else {
+              this.dataStore.splice(i, 0, data)
+            }
+            return true
+          } else {
+            if (this.dataStore[i] > data) {
+              this.dataStore.splice(i, 0, data)
+              return true
+            } else {
+              continue
+            }
+          }
+        }
+      }
       return true
     } else {
       return false
@@ -35,16 +60,16 @@ function Set() {
     }
   }
 
-  function show() {
-    return this.dataStore
-  }
-
   function contains(data) {
     if (this.dataStore.indexOf(data) > -1) {
       return true
     } else {
       return false
     }
+  }
+
+  function show() {
+    return this.dataStore
   }
 
   function union(set) {
@@ -71,6 +96,66 @@ function Set() {
   }
 
   function subset(set) {
+    if (this.size() > set.size()) {
+      return false
+    } else {
+      for (var i = 0, len = this.dataStore.length; i < len; i++) {
+        if (!set.contains(this.dataStore[i])) {
+          return false
+        }
+      }
+    }
+    return true
+  }
 
+  function difference(set) {
+    var tempSet = new Set()
+    for (var i = 0, len = this.dataStore.length; i < len; i++) {
+      if (!set.contains(this.dataStore[i])) {
+        tempSet.add(this.dataStore[i])
+      }
+    }
+    return tempSet
+  }
+
+  function size() {
+    return this.dataStore.length
+  }
+
+  function higher(element) {
+    if (element >= this.dataStore[(this.dataStore.length - 1)]) {
+      return false
+    }
+    for (var i = 0, len = this.dataStore.length; i < len; i++) {
+      if (this.dataStore[i].toLocaleUpperCase() > element.toLocaleUpperCase()) {
+        return this.dataStore[i]
+      }
+    }
+  }
+
+  function lower(element) {
+    if (element <= this.dataStore[0]) {
+      return false
+    }
+    for (var i = 0, len = this.dataStore.length; i < len; i++) {
+      if (this.dataStore[i].toLocaleUpperCase() >= element.toLocaleUpperCase()) {
+        return this.dataStore[i - 1]
+      }
+    }
   }
 }
+
+var it = new Set();
+
+it.add("Jennifer");
+it.add("Danny");
+it.add("Jonathan");
+it.add("Terrill");
+it.add("Raymond");
+it.add("Mike");
+it.add("Cynthia");
+it.add("Clayton");
+
+
+console.log(it.lower('N'))
+
