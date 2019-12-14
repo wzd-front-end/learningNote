@@ -13,6 +13,10 @@ function show() {
 function BST() {
   this.root = null
   this.insert = insert
+  this.getMax = getMax
+  this.getMin = getMin
+  this.find = find
+  this.remove = remove
 
   function insert(data) {
     var n = new Node(data, null, null)
@@ -39,6 +43,77 @@ function BST() {
       }
     }
   }
+
+  function getMin() {
+    var current = this.root
+    while (!(current.left === null)) {
+      current = current.left
+    }
+    return current.data
+  }
+
+  function getMax() {
+    var current = this.root
+    while (!(current.right === null)) {
+      current = current.right
+    }
+    return current.data
+  }
+
+  function find(data) {
+    var current = this.root
+    while (current !== null) {
+      if (current.data === data) {
+        return current
+      } else if (data < current.data) {
+        current = current.left
+      } else if (data > current.data) {
+        current = current.right
+      }
+    }
+    return null
+  }
+
+  function getSmallest(node) {
+    var current = node
+    while (!(current.left === null)) {
+      current = current.left
+    }
+    return current
+  }
+
+  function remove(data) {
+    this.root = removeNode(this.root, data)
+  }
+
+  function removeNode(node, data) {
+    if (node === null) {
+      return null
+    }
+    if (data === node.data) {
+      if (node.left === null && node.right === null) {
+        return null
+      }
+      if (node.left === null) {
+        return node.right
+      }
+      if (node.right === null) {
+        return node.left
+      }
+
+      var tempNode = getSmallest(node.right)
+      node.data = tempNode.data
+      node.right = removeNode(node.right, tempNode.data)
+      return node
+
+    } else if (data < node.data) {
+      node.left = removeNode(node.left, data)
+      return node
+    } else if (data > node.data) {
+      node.right = removeNode(node.right, data)
+      return node
+    }
+  }
 }
 function inOrder(node) {
   if (!(node === null)) {
@@ -49,7 +124,7 @@ function inOrder(node) {
 }
 
 function postOrder(node) {
-  if(!(node === null)){
+  if (!(node === null)) {
     postOrder(node.left)
     postOrder(node.right)
     console.log(node.show())
@@ -57,7 +132,7 @@ function postOrder(node) {
 }
 
 function preOrder(node) {
-  if (!(node === null)){
+  if (!(node === null)) {
     console.log(node.show())
     preOrder(node.left)
     preOrder(node.right)
@@ -72,7 +147,9 @@ nums.insert(37);
 nums.insert(3);
 nums.insert(99);
 nums.insert(22);
+inOrder(nums.root)
+nums.remove(45)
+inOrder(nums.root)
 
-postOrder(nums.root)
 
 
