@@ -12,7 +12,9 @@ function show() {
 
 function BST() {
   this.root = null
+  this.count = 0
   this.insert = insert
+  this.getEdge = getEdge
   this.getMax = getMax
   this.getMin = getMin
   this.find = find
@@ -42,6 +44,11 @@ function BST() {
         }
       }
     }
+    this.count++
+  }
+
+  function getEdge() {
+    return (this.count - 1)
   }
 
   function getMin() {
@@ -84,6 +91,7 @@ function BST() {
 
   function remove(data) {
     this.root = removeNode(this.root, data)
+    this.count--
   }
 
   function removeNode(node, data) {
@@ -147,9 +155,11 @@ nums.insert(37);
 nums.insert(3);
 nums.insert(99);
 nums.insert(22);
-inOrder(nums.root)
+console.log(nums.count)
+console.log(nums.getEdge())
 nums.remove(45)
-inOrder(nums.root)
+console.log(nums.count)
+console.log(nums.getEdge())
 
 
 
