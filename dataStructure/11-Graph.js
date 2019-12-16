@@ -136,10 +136,14 @@ function Graph(v) {
 
 }
 
-g = new Graph(5);
-g.addEdge(0,1);
-g.addEdge(0,2);
-g.addEdge(1,3);
-g.addEdge(2,4);
+g = new Graph(6);
+g.addEdge(1, 2);
+g.addEdge(2, 5);
+g.addEdge(1, 3);
+g.addEdge(1, 4);
+g.addEdge(0, 1);
+g.vertexList = ["CS1", "CS2", "Data Structures",
+  "Assembly Language", "Operating Systems",
+  "Algorithms"];
 // g.showGraph();
-console.log(g.pathTo(4))
+g.topSort();
