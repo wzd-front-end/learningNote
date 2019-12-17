@@ -1,3 +1,4 @@
+
 function Graph(v) {
   this.vertices = v
   this.vertexList = []
@@ -30,9 +31,11 @@ function Graph(v) {
   // 注意此处是无向图，增加一个边，实际上会对邻接表中的两个值进行操作
   function addEdge(v, w) {
     this.adj[v].push(w)
-    this.adj[w].push(v)
+    // 有向图需要注销下面一句
+    // this.adj[w].push(v)
     this.edges++
   }
+
   // 打印邻接表中的依赖关系
   function showGraph() {
     var visited = [];
@@ -63,7 +66,7 @@ function Graph(v) {
     }.bind(this))
   }
 
-  // 广度优先搜索
+  // 广度优先搜索，利用队列的思想
   function bfs(s) {
     var queue = []
     this.marked[s] = true
@@ -85,23 +88,25 @@ function Graph(v) {
   }
 
   // 搜索最短路径算法
-  function pathTo(v) {
-    var source = 0
-    this.bfs(0)
+  function pathTo(v, s) {
+    s === undefined ? s = 0: s
+    this.bfs(s)
+    console.log(this.edgeTo)
     if (!this.hashPathTo(v)) {
       return undefined
     }
     var path = []
-    for (var i = v; i != source; i = this.edgeTo[i]) {
+    for (var i = v; i != s; i = this.edgeTo[i]) {
       path.push(i)
     }
-    path.push(source)
+    path.push(s)
     return path
   }
 
   function hashPathTo(v) {
     return this.marked[v]
   }
+
   // 拓扑排序实际上是应用了深度优先搜索
   function topSort() {
     var stack = []
@@ -115,8 +120,9 @@ function Graph(v) {
         this.topSortHelper(i, visited, stack)
       }
     }
+    console.log(stack)
     for (var i = 0; i < stack.length; i++) {
-      if (stack[i] != undefined && stack[i] != false) {
+      if (stack[i] !== undefined && stack[i] !== false) {
         console.log(this.vertexList[stack[i]]);
       }
     }
@@ -124,26 +130,25 @@ function Graph(v) {
 
   function topSortHelper(v, visited, stack) {
     visited[v] = true
-    if (this.adj[v]) {
-      this.adj[v].forEach(function (w) {
-        if (visited[w] === false) {
-          this.topSortHelper(visited[w], visited, stack)
-        }
-      }.bind(this))
-    }
+
+    this.adj[v].forEach(function (w) {
+      if (visited[w] === false) {
+        this.topSortHelper(w, visited, stack)
+      }
+    }.bind(this))
     stack.push(v)
   }
-
 }
 
-g = new Graph(6);
+g = new Graph(7);
 g.addEdge(1, 2);
-g.addEdge(2, 5);
 g.addEdge(1, 3);
 g.addEdge(1, 4);
-g.addEdge(0, 1);
-g.vertexList = ["CS1", "CS2", "Data Structures",
-  "Assembly Language", "Operating Systems",
-  "Algorithms"];
-// g.showGraph();
-g.topSort();
+g.addEdge(3, 2);
+g.addEdge(4, 5);
+g.addEdge(3, 5);
+g.addEdge(6, 4);
+g.addEdge(6, 5);
+
+console.log(g.topSort())
+
