@@ -25,14 +25,18 @@
 *
 * 总结：综上所述，基本排序算法中，插入排序最快，次之是选择排序，最慢的是冒泡排序；
 * 选择和冒泡的时间复杂度相近，主要产生差异是因为选择是在最后时刻做的交换，而冒泡则需要不断地交换；
+* 数据量小于一百的时候，选择选择排序
 * 插入是因为内部第二个循环不会像选择和冒泡，按部就班执行循环完毕，而是可能简单比较少数，使得循环次数较少；
-* 尽管插入排序最快，但随着数据量增加，效率逐渐变差，测试在数量1000以上5000以下效率明显
+* 尽管插入排序最快，但随着数据量增加，效率逐渐变差，测试在数量100以上6000以下效率较满意
+* 6000以上的数据量，希尔排序的优势就体现出来了
+*
 *
 * */
 
 function CArray() {
   this.dataStore = [];
   this.pos = 0;
+  this.gaps = [5, 3, 1];
   this.numElements = numElements;
   this.insert = insert;
   this.toString = toString;
@@ -44,7 +48,11 @@ function CArray() {
   // 选择排序
   this.selectionSort = selectionSort;
   // 插入排序
-  this.insertionSort = insertionSort
+  this.insertionSort = insertionSort;
+  // 希尔排序
+  this.setGaps = setGaps;
+  this.shellSort = shellSort;
+
   for (var i = 0; i < numElements; ++i) {
     this.dataStore[i] = i;
   }
@@ -128,9 +136,22 @@ function CArray() {
 
   }
 
-  //希尔排序
-  function a() {
 
+  //希尔排序
+  function setGaps(arr) {
+    this.gaps = arr;
+  }
+
+  function shellSort() {
+    for (var g = 0; g < this.gaps.length; ++g) {
+      for(var i = this.gaps[g];i < this.dataStore.length; i++){
+        var temp = this.dataStore[i]
+        for(var j = i; j >= this.gaps[g] && this.dataStore[j - this.gaps[g]] > temp;j -= this.gaps[g]){
+          this.dataStore[j] = this.dataStore[j - this.gaps[g]]
+        }
+        this.dataStore[j] = temp;
+      }
+    }
   }
 
   //归并排序
@@ -150,7 +171,7 @@ function CArray() {
   }
 }
 
-var numElements = 5000;
+var numElements = 500;
 var myNums = new CArray(numElements);
 myNums.setData();
 // console.log("冒泡排序：")
@@ -158,16 +179,19 @@ myNums.setData();
 // myNums.bubbleSort()
 // console.timeEnd()
 
-// console.log("选择排序：")
+console.log("选择排序：")
+console.time()
+myNums.selectionSort()
+console.timeEnd()
+//
+// console.log("插入排序：")
 // console.time()
-// myNums.selectionSort()
+// myNums.insertionSort()
 // console.timeEnd()
 
-console.log("插入排序：")
-console.time()
-myNums.insertionSort()
-console.timeEnd()
-
-
+// console.log("希尔排序：")
+// console.time()
+// myNums.shellSort()
+// console.timeEnd()
 
 

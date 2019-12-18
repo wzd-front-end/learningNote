@@ -91,7 +91,6 @@ function Graph(v) {
   function pathTo(v, s) {
     s === undefined ? s = 0: s
     this.bfs(s)
-    console.log(this.edgeTo)
     if (!this.hashPathTo(v)) {
       return undefined
     }
@@ -140,15 +139,14 @@ function Graph(v) {
   }
 }
 
-g = new Graph(7);
+g = new Graph(8);
 g.addEdge(1, 2);
-g.addEdge(1, 3);
-g.addEdge(1, 4);
-g.addEdge(3, 2);
+g.addEdge(2, 3);
+g.addEdge(3, 4);
 g.addEdge(4, 5);
-g.addEdge(3, 5);
-g.addEdge(6, 4);
+g.addEdge(1, 6);
 g.addEdge(6, 5);
+g.addEdge(5, 7);
 
-console.log(g.topSort())
+console.log(g.pathTo(7,1))
 
