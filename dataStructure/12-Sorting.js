@@ -3,25 +3,25 @@
 * 冒泡排序：
 * default: 0.572ms
 * 选择排序：
-* default: 0.280ms
+* default: 0.435ms
 * 插入排序：
-* default: 0.058ms
+* default: 0.204ms
 *
 * 1000个数据排序测试时间结果：
 * 冒泡排序：
 * default: 4.127ms
 * 选择排序：
-* default: 2.223ms
+* default: 3.692ms
 * 插入排序：
-* default: 0.157ms
+* default: 0.267ms
 *
 * 10000个数据排序测试时间结果：
 * 冒泡排序：
-* default: 125.625ms
+* default: 129.949ms
 * 选择排序：
-* default: 54.222ms
+* default: 64.435ms
 * 插入排序：
-* default: 1.862ms
+* default: 21.605ms
 *
 * 总结：综上所述，基本排序算法中，插入排序最快，次之是选择排序，最慢的是冒泡排序；
 * 选择和冒泡的时间复杂度相近，主要产生差异是因为选择是在最后时刻做的交换，而冒泡则需要不断地交换；
@@ -128,18 +128,18 @@ function CArray() {
   }
 }
 
-var numElements = 10000;
+var numElements = 100;
 var myNums = new CArray(numElements);
 myNums.setData();
-console.log("冒泡排序：")
-console.time()
-myNums.bubbleSort()
-console.timeEnd()
+// console.log("冒泡排序：")
+// console.time()
+// myNums.bubbleSort()
+// console.timeEnd()
 
-console.log("选择排序：")
-console.time()
-myNums.selectionSort()
-console.timeEnd()
+// console.log("选择排序：")
+// console.time()
+// myNums.selectionSort()
+// console.timeEnd()
 
 console.log("插入排序：")
 console.time()
