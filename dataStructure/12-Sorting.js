@@ -52,6 +52,7 @@ function CArray() {
   // 希尔排序
   this.setGaps = setGaps;
   this.shellSort = shellSort;
+  this.dynamicShellSort = dynamicShellSort;
 
   for (var i = 0; i < numElements; ++i) {
     this.dataStore[i] = i;
@@ -154,6 +155,22 @@ function CArray() {
     }
   }
 
+  function dynamicShellSort() {
+    var N = this.dataStore.length
+    var h = 1
+    while (h < N / 3) {
+      h = 3 * h + 1
+    }
+    while (h >= 1) {
+      for (var i = h; i < N; i++) {
+        for (var j = i; j >= h && this.dataStore[j - h] > this.dataStore[j]; j -= h) {
+          this.swap(this.dataStore, j, j - h)
+        }
+      }
+      h = (h - 1) / 3
+    }
+  }
+
   //归并排序
   function b() {
 
@@ -171,7 +188,7 @@ function CArray() {
   }
 }
 
-var numElements = 6000;
+var numElements = 100000;
 var myNums = new CArray(numElements);
 myNums.setData();
 // console.log("冒泡排序：")
@@ -195,4 +212,7 @@ myNums.setGaps([701, 301, 132, 57, 23, 10, 4, 1])
 myNums.shellSort()
 console.timeEnd()
 
-
+// console.log("动态希尔排序：")
+// console.time()
+// myNums.dynamicShellSort()
+// console.timeEnd()
