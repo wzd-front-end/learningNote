@@ -144,9 +144,9 @@ function CArray() {
 
   function shellSort() {
     for (var g = 0; g < this.gaps.length; ++g) {
-      for(var i = this.gaps[g];i < this.dataStore.length; i++){
+      for (var i = this.gaps[g]; i < this.dataStore.length; i++) {
         var temp = this.dataStore[i]
-        for(var j = i; j >= this.gaps[g] && this.dataStore[j - this.gaps[g]] > temp;j -= this.gaps[g]){
+        for (var j = i; j >= this.gaps[g] && this.dataStore[j - this.gaps[g]] > temp; j -= this.gaps[g]) {
           this.dataStore[j] = this.dataStore[j - this.gaps[g]]
         }
         this.dataStore[j] = temp;
@@ -171,7 +171,7 @@ function CArray() {
   }
 }
 
-var numElements = 500;
+var numElements = 6000;
 var myNums = new CArray(numElements);
 myNums.setData();
 // console.log("冒泡排序：")
@@ -179,19 +179,20 @@ myNums.setData();
 // myNums.bubbleSort()
 // console.timeEnd()
 
-console.log("选择排序：")
-console.time()
-myNums.selectionSort()
-console.timeEnd()
-//
+// console.log("选择排序：")
+// console.time()
+// myNums.selectionSort()
+// console.timeEnd()
+
 // console.log("插入排序：")
 // console.time()
 // myNums.insertionSort()
 // console.timeEnd()
 
-// console.log("希尔排序：")
-// console.time()
-// myNums.shellSort()
-// console.timeEnd()
+console.log("希尔排序：")
+console.time()
+myNums.setGaps([701, 301, 132, 57, 23, 10, 4, 1])
+myNums.shellSort()
+console.timeEnd()
 
 
