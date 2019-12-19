@@ -29,6 +29,8 @@
 * 插入是因为内部第二个循环不会像选择和冒泡，按部就班执行循环完毕，而是可能简单比较少数，使得循环次数较少；
 * 尽管插入排序最快，但随着数据量增加，效率逐渐变差，测试在数量100以上6000以下效率较满意
 * 6000以上的数据量，希尔排序的优势就体现出来了
+* 归并排序和快速排序都是利用分治的思想来解决的
+*
 *
 *
 * */
@@ -53,6 +55,10 @@ function CArray() {
   this.setGaps = setGaps;
   this.shellSort = shellSort;
   this.dynamicShellSort = dynamicShellSort;
+  // 归并排序
+  this.mergeSort = mergeSort;
+  // 快速排序
+  this.quickSort = quickSort
 
   for (var i = 0; i < numElements; ++i) {
     this.dataStore[i] = i;
@@ -137,7 +143,6 @@ function CArray() {
 
   }
 
-
   //希尔排序
   function setGaps(arr) {
     this.gaps = arr;
@@ -172,25 +177,96 @@ function CArray() {
   }
 
   //归并排序
-  function b() {
+  function mergeSort() {
+    if (this.dataStore.length < 2) {
+      return
+    }
+    var step = 1
+    var left, right
 
+    while (step < this.dataStore.length) {
+      left = 0
+      right = step
+
+      while (right + step <= this.dataStore.length) {
+        mergeArrays(this.dataStore, left, left + step, right, right + step)
+        left = right + step
+        right = left + step
+      }
+
+      if (right < this.dataStore.length) {
+        mergeArrays(this.dataStore, left, left + step, right, this.dataStore.length)
+      }
+      step *= 2
+    }
+  }
+
+  function mergeArrays(arr, startLeft, stopLeft, startRight, stopRight) {
+    var rightArr = new Array(stopRight - startRight + 1)
+    var leftArr = new Array(stopLeft - startLeft + 1)
+    var k = startRight
+    for (var i = 0; i < (rightArr.length - 1); i++) {
+      rightArr[i] = arr[k]
+      k++
+    }
+    k = startLeft
+    for (var i = 0; i < (leftArr.length - 1); i++) {
+      leftArr[i] = arr[k]
+      k++
+    }
+    rightArr[rightArr.length - 1] = Infinity // 哨兵值
+    leftArr[leftArr.length - 1] = Infinity // 哨兵值
+    var m = 0, n = 0
+    for (var k = startLeft; k < stopRight; ++k) {
+      if (leftArr[m] <= rightArr[n]) {
+        arr[k] = leftArr[m]
+        m++
+      } else {
+        arr[k] = rightArr[n]
+        n++
+      }
+    }
+    // console.log("left array - ", leftArr);
+    // console.log("right array - ", rightArr);
   }
 
 
   //快速排序
-  function c() {
-
-  }
-
-  //堆排序
-  function d() {
-
+  function quickSort(arr, i, j) {
+    if (i < j) {
+      let left = i;
+      let right = j;
+      let mid = Math.floor((left + right) / 2);
+      let temp = arr[left];
+      arr[left] = arr[mid];
+      arr[mid] = temp;
+      let pivot = arr[left];
+      while (i < j) {
+        while (arr[j] >= pivot && i < j) {  // 从后往前找比基准小的数
+          j--;
+        }
+        if (i < j) {
+          arr[i++] = arr[j];
+        }
+        while (arr[i] <= pivot && i < j) {  // 从前往后找比基准大的数
+          i++;
+        }
+        if (i < j) {
+          arr[j--] = arr[i];
+        }
+      }
+      arr[i] = pivot;
+      this.quickSort(arr, left, i - 1);
+      this.quickSort(arr, i + 1, right);
+      return arr;
+    }
   }
 }
 
-var numElements = 100000;
+var numElements = 10000000;
 var myNums = new CArray(numElements);
 myNums.setData();
+
 // console.log("冒泡排序：")
 // console.time()
 // myNums.bubbleSort()
@@ -206,13 +282,24 @@ myNums.setData();
 // myNums.insertionSort()
 // console.timeEnd()
 
-console.log("希尔排序：")
-console.time()
-myNums.setGaps([701, 301, 132, 57, 23, 10, 4, 1])
-myNums.shellSort()
-console.timeEnd()
+// console.log("希尔排序：")
+// console.time()
+// myNums.setGaps([701, 301, 132, 57, 23, 10, 4, 1])
+// myNums.shellSort()
+// console.timeEnd()
 
 // console.log("动态希尔排序：")
 // console.time()
 // myNums.dynamicShellSort()
 // console.timeEnd()
+
+// console.log("归并排序：")
+// console.time()
+// myNums.mergeSort()
+// console.timeEnd()
+
+// console.log("快速排序：")
+// console.time()
+// myNums.quickSort(myNums.dataStore, 0, numElements)
+// console.timeEnd()
+
