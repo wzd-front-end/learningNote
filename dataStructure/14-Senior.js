@@ -10,8 +10,8 @@
 
 /**
  * [recurFib description] 斐波那契数列，递归实现
- * @param  {[type]} num   [获取第n个数]
- * @return {[type]} num     [返回对应的数值]
+ * @param  {[num]}  n  [获取第n个数]
+ * @return {[num]}     [返回对应的数值]
  */
 function recurFib(n) {
   if (n === 1) {
@@ -31,8 +31,8 @@ function recurFib(n) {
 
 /**
  * [recurFib description] 斐波那契数列，动态规划
- * @param  {[type]} num   [获取第n个数]
- * @return {[type]} num     [返回对应的数值]
+ * @param  {[num]}  n  [获取第n个数]
+ * @return {[num]}     [返回对应的数值]
  */
 function dynFib(n) {
   var val = []
@@ -57,3 +57,54 @@ function dynFib(n) {
 // dynFib(45)
 // console.timeEnd()
 // 测试案例：default: 0.066ms
+
+/**
+ * [lcs description] 寻找最长公共子串，动态规划
+ * @param  {[str]} word1  [单词1]
+ * @param  {[str]} word2  [单词2]
+ * @return {[str]}        [返回最长公共字符串]
+ */
+
+function lcs(word1, word2) {
+  var max = 0
+  var index = 0
+  var lcsarr = new Array(word1.length + 1)
+  for (var i = 0; i < word1.length + 1; i++) {
+    lcsarr[i] = new Array(word2.length + 1)
+    for (var j = 0; j < word2.length + 1; j++) {
+      lcsarr[i][j] = 0
+    }
+  }
+  for (var i = 0; i <= word1.length; i++) {
+    for (var j = 0; j <= word2.length; j++) {
+      if (i === 0 || j === 0) {
+        lcsarr[i][j] = 0
+      } else {
+        if (word1[i - 1] === word2[j - 1]) {
+          lcsarr[i][j] = lcsarr[i - 1][j - 1] + 1
+        } else {
+          lcsarr[i][j] = 0
+        }
+      }
+      if (max < lcsarr[i][j]) {
+        max = lcsarr[i][j]
+        index = i
+      }
+    }
+  }
+
+  var str = ''
+  console.log(index)
+  console.log(max)
+  if (max === 0) {
+    return str
+  } else {
+    for (var i = index - max; i < index; i++) {
+      str += word1[i]
+    }
+    return str
+  }
+}
+
+console.log(lcs('测试公共字符串', '我测不测还不知道，现实是前半部分，现在可以测试公共字符串，测试完毕'))
+
