@@ -126,7 +126,6 @@ function dKnapsack(capacity, size, value, n) {
       } else {
         K[i][w] = K[i - 1][w];
       }
-
     }
   }
   console.log(K);
