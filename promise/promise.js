@@ -1,11 +1,15 @@
 function Promise(executor) {
   let self = this
+  // promise 状态，三种：pending(等待)，resolved(完成)，reject(拒绝)
   self.status = 'pending'
   self.value = null
   self.reason = null
+  // 成功回调函数
   self.onFulfilledCallbacks = []
+  // 失败回调函数
   self.onRejectedCallbacks = []
 
+  // 调用时将状态改为resolved并将传入值赋值给this.value，遍历执行成功回调数组里面的函数
   function resolve(value) {
     if (self.status === 'pending') {
       self.status = 'resolved'
@@ -16,6 +20,7 @@ function Promise(executor) {
     }
   }
 
+  // 调用时将状态改为rejected并将传入原因赋值给reason，遍历执行拒绝数组里面的函数
   function reject(reason) {
     if (self.status === 'pending') {
       self.status = 'rejected'
