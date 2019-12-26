@@ -167,7 +167,7 @@ Promise.all = function (promises) {
     }
   })
 }
-
+// race 方法
 Promise.race = function (promises) {
   return new Promise((resolve, reject) => {
     function checkPromise(curr) {
