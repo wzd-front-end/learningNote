@@ -14,6 +14,7 @@ function Promise(executor) {
     if (self.status === 'pending') {
       self.status = 'resolved'
       self.value = value
+      console.log(self.onFulfilledCallbacks)
       self.onFulfilledCallbacks.forEach(fn => {
         fn()
       })
@@ -35,15 +36,19 @@ function Promise(executor) {
 }
 
 function resolvePromise(promise2, x, resolve, reject) {
+  // 确保因为传值错误导致的死循环
   if (promise2 === x) {
     return reject(new TypeError('循环引用'))
   }
-
+  // 确保只走其中某一个分支
   let called
+  // 如果x是一个对象，则需要再验证，否则，直接调用传入的resolve返回x值，这样then后面可以再接一个then
   if (x != null && (typeof x === 'object' || typeof x === 'function')) {
     try {
+      // 获取x上的then方法，如果存在该方法，可将其当作一个promise对象来处理
       let then = x.then
       if (typeof then === 'function') {
+
         then.call(x, (y) => {
           if (called) return
           called = true
@@ -54,6 +59,7 @@ function resolvePromise(promise2, x, resolve, reject) {
           reject(e)
         })
       } else {
+        // 不存在then方法，说明他是一个普通的对象和方法，则直接调用返回promise2的resolve
         resolve(x)
       }
     } catch (e) {
@@ -62,6 +68,7 @@ function resolvePromise(promise2, x, resolve, reject) {
       reject(e)
     }
   } else {
+    // promise2对象的resolve，用于实现链式调用
     resolve(x)
   }
 }
@@ -138,6 +145,7 @@ Promise.prototype.finally = function (fn) {
 }
 // all方法
 Promise.all = function (promises) {
+  // all方法执行后紧跟着then接收参数，所以其实也是一个promise
   return new Promise((resolve, reject) => {
     let length = promises.length === undefined ? Object.keys(promises).length : promises.length
     if (length === 0) {

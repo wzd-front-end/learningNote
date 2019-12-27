@@ -11,6 +11,10 @@ let Promise = require('./promise')
 //   console.log(value);
 // });
 var a = new Promise((resolve, reject) => {
-  resolve(4)
+  setTimeout(function () {
+    resolve(4)
+  },1000)
+}).then(data => {
+  console.log(data)
 })
 console.log(a)
