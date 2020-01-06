@@ -80,16 +80,21 @@ function lengthOfLongestSubstring(str) {
     return
   }
   var set = new HashTable();
-  var max = 0;
+  var max = 0, resultStr = '', tempStr = '';
   for (var i = 0, j = 0; j < str.length; j++) {
     while (set.get(str[j])) {
       set.remove(str[i])
+      tempStr = tempStr.substring(1)
       i++
     }
     set.put(str[j])
-    max = Math.max(max, set.size())
+    tempStr += str[j]
+    if (max < set.size()) {
+      max = set.size()
+      resultStr = tempStr
+    }
   }
-  return max
+  return resultStr
 }
 
 function lengthOfLongestSubstringOptimization(str) {
@@ -114,10 +119,10 @@ function lengthOfLongestSubstringOptimization(str) {
   return resultStr
 }
 
-// console.time()
-// lengthOfLongestSubstring('pwwkew')
-// console.timeEnd()
-
 console.time()
-lengthOfLongestSubstringOptimization('deabcafghi')
+lengthOfLongestSubstring('pwwkew')
 console.timeEnd()
+
+// console.time()
+// lengthOfLongestSubstringOptimization('pwwkew')
+// console.timeEnd()
