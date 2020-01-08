@@ -263,7 +263,7 @@ function CArray() {
   }
 }
 
-var numElements = 10000000;
+var numElements = 100;
 var myNums = new CArray(numElements);
 myNums.setData();
 
@@ -298,8 +298,8 @@ myNums.setData();
 // myNums.mergeSort()
 // console.timeEnd()
 
-// console.log("快速排序：")
-// console.time()
-// myNums.quickSort(myNums.dataStore, 0, numElements)
-// console.timeEnd()
+console.log("快速排序：")
+console.time()
+myNums.quickSort(myNums.dataStore, 0, numElements - 1)
+console.timeEnd()
 

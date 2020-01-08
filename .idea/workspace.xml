@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c124d97f-17ff-45d2-8e0d-54b7ad89ea22" name="Default Changelist" comment="">
+    <list default="true" id="c124d97f-17ff-45d2-8e0d-54b7ad89ea22" name="Default Changelist" comment="feat：切分法实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/promise/promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/promise/promise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/promise/testPromise.js" beforeDir="false" afterPath="$PROJECT_DIR$/promise/testPromise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataStructure/12-Sorting.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataStructure/12-Sorting.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,25 +16,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/promise/promise.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="206" selection-start-line="206" selection-end-line="206" />
+            <state relative-caret-position="1518">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
               <folding>
-                <element signature="e#4827#4969#0" />
+                <element signature="n#!!block;n#HashSet#0" />
+                <element signature="n#!!block;n#lengthOfLongestSubstring#0" />
+                <element signature="n#!!block;n#lengthOfLongestSubstringOptimization#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/promise/testPromise.js">
+        <entry file="file://$PROJECT_DIR$/dataStructure/orderedArrayMedian.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="22">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataStructure/12-Sorting.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="259" column="40" lean-forward="true" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/8-HashTable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="n#!!block;n#simpleHash#0;n#!!block;n#HashTable#0" />
+                <element signature="n#!!block;n#showDistro#0;n#!!block;n#HashTable#0" />
+                <element signature="n#!!block;n#buildChains#0;n#!!block;n#HashTable#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1276">
+              <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/14-Senior.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -63,6 +104,9 @@
       <find>resolvePromise</find>
       <find>reason</find>
       <find>status</find>
+      <find>promise2</find>
+      <find>selectionSort</find>
+      <find>quickSort</find>
     </findStrings>
     <replaceStrings>
       <replace>console.log</replace>
@@ -89,13 +133,18 @@
         <option value="$PROJECT_DIR$/node/index.js" />
         <option value="$PROJECT_DIR$/promise/testPromise.js" />
         <option value="$PROJECT_DIR$/promise/promise.js" />
+        <option value="$PROJECT_DIR$/dataStructure/13-Search.js" />
+        <option value="$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js" />
+        <option value="$PROJECT_DIR$/dataStructure/orderedArrayMedian.js" />
+        <option value="$PROJECT_DIR$/dataStructure/12-Sorting.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="width" value="1385" />
-    <option name="height" value="1100" />
+    <option name="x" value="-7" />
+    <option name="y" value="2" />
+    <option name="width" value="1932" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -107,13 +156,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="vuePrinciple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vuePrinciple" type="462c0819:PsiDirectoryNode" />
+              <item name="learningNote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learningNote" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="vuePrinciple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vuePrinciple" type="462c0819:PsiDirectoryNode" />
-              <item name="promise" type="462c0819:PsiDirectoryNode" />
+              <item name="learningNote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learningNote" type="462c0819:PsiDirectoryNode" />
+              <item name="dataStructure" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,21 +206,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.testPromise.js">
+  <component name="RunManager" selected="Node.js.12-Sorting.js">
+    <configuration name="12-Sorting.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="12-Sorting.js" working-dir="$PROJECT_DIR$/dataStructure">
+      <method v="2" />
+    </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/node">
+      <method v="2" />
+    </configuration>
+    <configuration name="longestSubstringWithoutRepetition.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="longestSubstringWithoutRepetition.js" working-dir="$PROJECT_DIR$/dataStructure">
+      <method v="2" />
+    </configuration>
+    <configuration name="orderedArrayMedian.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="orderedArrayMedian.js" working-dir="$PROJECT_DIR$/dataStructure">
       <method v="2" />
     </configuration>
     <configuration name="testPromise.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="testPromise.js" working-dir="$PROJECT_DIR$/promise">
       <method v="2" />
     </configuration>
-    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/node">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.testPromise.js" />
+        <item itemvalue="Node.js.12-Sorting.js" />
+        <item itemvalue="Node.js.orderedArrayMedian.js" />
+        <item itemvalue="Node.js.longestSubstringWithoutRepetition.js" />
         <item itemvalue="Node.js.index.js" />
-        <item itemvalue="Node.js.test.js" />
+        <item itemvalue="Node.js.testPromise.js" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +246,12 @@
       <workItem from="1552007689229" duration="6727000" />
       <workItem from="1552144744100" duration="4131000" />
       <workItem from="1552187033385" duration="890000" />
-      <workItem from="1577239736186" duration="20862000" />
+      <workItem from="1577239736186" duration="22266000" />
+      <workItem from="1577666952179" duration="599000" />
+      <workItem from="1577946247973" duration="8344000" />
+      <workItem from="1578294048145" duration="623000" />
+      <workItem from="1578294982549" duration="27267000" />
+      <workItem from="1578470662627" duration="3410000" />
     </task>
     <task id="LOCAL-00001" summary="新建mvvm和observer">
       <created>1551866410989</created>
@@ -261,29 +323,51 @@
       <option name="project" value="LOCAL" />
       <updated>1577355429584</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat：增加手写promise">
+      <created>1577416483411</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1577416483411</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat：获取无重复最长子字符串">
+      <created>1578308175525</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1578308175525</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat：切分法实现寻找两个有序数组的中位数">
+      <created>1578384077181</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1578384077181</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61112000" />
+    <option name="totallyTimeSpent" value="102759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15173867" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18282403" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20173536" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23210412" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26030368" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.20173536" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3546638" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -298,7 +382,9 @@
     <MESSAGE value="新建compile" />
     <MESSAGE value="新增队列" />
     <MESSAGE value="feat：增加手写promise" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat：增加手写promise" />
+    <MESSAGE value="feat：获取无重复最长子字符串" />
+    <MESSAGE value="feat：切分法实现寻找两个有序数组的中位数" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat：切分法实现寻找两个有序数组的中位数" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vuePrinciple/mvvm.js" />
@@ -344,15 +430,47 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/test.js">
+    <entry file="file://$PROJECT_DIR$/node/test.js" />
+    <entry file="file://$PROJECT_DIR$/promise/.idea/misc.xml" />
+    <entry file="file://$PROJECT_DIR$/promise/testPromise.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        <state relative-caret-position="330">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/promise/.idea/misc.xml">
+    <entry file="file://$PROJECT_DIR$/dataStructure/13-Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/11-Graph.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/9-Set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/10-BST.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/promise/promise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node/express-review.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -363,31 +481,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="-294">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="n#!!block;n#HashSet#0" />
+            <element signature="n#!!block;n#lengthOfLongestSubstring#0" />
+            <element signature="n#!!block;n#lengthOfLongestSubstringOptimization#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/8-HashTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="n#!!block;n#simpleHash#0;n#!!block;n#HashTable#0" />
+            <element signature="n#!!block;n#showDistro#0;n#!!block;n#HashTable#0" />
+            <element signature="n#!!block;n#buildChains#0;n#!!block;n#HashTable#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataStructure/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
+        <state relative-caret-position="1276">
           <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/promise/testPromise.js">
+    <entry file="file://$PROJECT_DIR$/dataStructure/14-Senior.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/orderedArrayMedian.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        <state relative-caret-position="22">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/promise/promise.js">
+    <entry file="file://$PROJECT_DIR$/dataStructure/12-Sorting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="206" selection-start-line="206" selection-end-line="206" />
+        <state relative-caret-position="473">
+          <caret line="259" column="40" lean-forward="true" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
           <folding>
-            <element signature="e#4827#4969#0" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
