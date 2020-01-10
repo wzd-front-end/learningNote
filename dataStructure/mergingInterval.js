@@ -28,7 +28,7 @@ function mergeInterval(interval) {
   result.push(previous)
   console.log('合并值：',result)
 }
-
+// 合并区间测试案例
 mergeInterval([[2, 6], [1, 5], [1, 3], [15, 18], [8, 19]])
 
 
