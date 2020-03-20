@@ -97,7 +97,7 @@ function CArray() {
     arr[index2] = temp;
   }
 
-  // 冒泡排序，是最慢得排序算法之一
+  // 冒泡排序，通过循环，不断地比较当前值与下一个值的大小做交换（注：第二次循环全部执行）
   function bubbleSort() {
     var numElements = this.dataStore.length
     for (var outer = numElements; outer >= 2; --outer) {
@@ -110,7 +110,7 @@ function CArray() {
     }
   }
 
-  // 选择排序
+  // 选择排序，第二次循环不像冒泡做交换，而且存储下标值，最后制作一次交换（注：第二次循环全部执行）
   function selectionSort() {
     var min, numElements = this.dataStore.length
     for (var outer = 0; outer < numElements - 1; ++outer) {
@@ -127,9 +127,10 @@ function CArray() {
     }
   }
 
-  // 插入排序
+  // 插入排序，（注：第二次循环不会全部执行）
   function insertionSort() {
     var temp, inner, numElements = this.dataStore.length
+    
     for (var outer = 1; outer <= numElements - 1; outer++) {
       temp = this.dataStore[outer]
       inner = outer
@@ -241,7 +242,7 @@ function CArray() {
       arr[left] = arr[mid];
       arr[mid] = temp;
       let pivot = arr[left];
-      while (i < j) {
+      while (i < j) { 
         while (arr[j] >= pivot && i < j) {  // 从后往前找比基准小的数
           j--;
         }

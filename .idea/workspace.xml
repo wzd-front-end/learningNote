@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c124d97f-17ff-45d2-8e0d-54b7ad89ea22" name="Default Changelist" comment="feat：切分法实现">
+    <list default="true" id="c124d97f-17ff-45d2-8e0d-54b7ad89ea22" name="Default Changelist" comment="fix：增加合并区间案例">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataStructure/12-Sorting.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataStructure/12-Sorting.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,9 +16,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/orderedArrayMedian.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/6-LinkedList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#find#0;n#!!block;n#LList#0" />
+                <element signature="n#!!block;n#insert#0;n#!!block;n#LList#0" />
+                <element signature="n#!!block;n#display#0;n#!!block;n#LList#0" />
+                <element signature="n#!!block;n#findPrevious#0;n#!!block;n#LList#0" />
+                <element signature="n#!!block;n#remove#0;n#!!block;n#LList#0" />
+                <element signature="n#!!block;n#findLast#0;n#!!block;n#LList#0" />
+                <element signature="n#!!block;n#dispReverse#0;n#!!block;n#LList#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/mergingInterval.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
+            <state relative-caret-position="730">
               <caret line="128" selection-start-line="128" selection-end-line="128" />
               <folding>
                 <element signature="n#!!block;n#HashSet#0" />
@@ -31,19 +67,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataStructure/orderedArrayMedian.js">
+        <entry file="file://$PROJECT_DIR$/dataStructure/noOverlappingInterval.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+            <state relative-caret-position="418">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ES6/Module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1474">
+              <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataStructure/11-Graph.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1870">
+              <caret line="85" column="19" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataStructure/12-Sorting.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="259" column="40" lean-forward="true" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
+            <state relative-caret-position="2530">
+              <caret line="150" column="20" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -52,31 +106,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataStructure/8-HashTable.js">
+        <entry file="file://$PROJECT_DIR$/dataStructure/9-Set.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="1518">
+              <caret line="74" column="16" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="16" />
               <folding>
-                <element signature="n#!!block;n#simpleHash#0;n#!!block;n#HashTable#0" />
-                <element signature="n#!!block;n#showDistro#0;n#!!block;n#HashTable#0" />
-                <element signature="n#!!block;n#buildChains#0;n#!!block;n#HashTable#0" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataStructure/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1276">
-              <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dataStructure/14-Senior.js">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -85,6 +123,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -107,6 +146,12 @@
       <find>promise2</find>
       <find>selectionSort</find>
       <find>quickSort</find>
+      <find>union</find>
+      <find>shellSort</find>
+      <find>bfs</find>
+      <find>addEdge</find>
+      <find>vertices</find>
+      <find>edgeTo</find>
     </findStrings>
     <replaceStrings>
       <replace>console.log</replace>
@@ -137,10 +182,19 @@
         <option value="$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js" />
         <option value="$PROJECT_DIR$/dataStructure/orderedArrayMedian.js" />
         <option value="$PROJECT_DIR$/dataStructure/12-Sorting.js" />
+        <option value="$PROJECT_DIR$/dataStructure/6-LinkedList.js" />
+        <option value="$PROJECT_DIR$/dataStructure/mergingInterval.js" />
+        <option value="$PROJECT_DIR$/dataStructure/test.js" />
+        <option value="$PROJECT_DIR$/dataStructure/noOverlappingInterval.js" />
+        <option value="$PROJECT_DIR$/a.js" />
+        <option value="$PROJECT_DIR$/b.js" />
+        <option value="$PROJECT_DIR$/c.js" />
+        <option value="$PROJECT_DIR$/ES6/Module.css" />
+        <option value="$PROJECT_DIR$/ES6/Module.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1932" />
@@ -152,6 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,11 +219,20 @@
               <item name="learningNote" type="462c0819:PsiDirectoryNode" />
               <item name="dataStructure" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="learningNote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learningNote" type="462c0819:PsiDirectoryNode" />
+              <item name="ES6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learningNote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learningNote" type="462c0819:PsiDirectoryNode" />
+              <item name="vuePrinciples" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,7 +240,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -206,29 +271,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.12-Sorting.js">
+  <component name="RunManager" selected="Node.js.c.js">
     <configuration name="12-Sorting.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="12-Sorting.js" working-dir="$PROJECT_DIR$/dataStructure">
       <method v="2" />
     </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/node">
+    <configuration name="c.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="c.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="longestSubstringWithoutRepetition.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="longestSubstringWithoutRepetition.js" working-dir="$PROJECT_DIR$/dataStructure">
+    <configuration name="mergingInterval.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="mergingInterval.js" working-dir="$PROJECT_DIR$/dataStructure">
       <method v="2" />
     </configuration>
-    <configuration name="orderedArrayMedian.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="orderedArrayMedian.js" working-dir="$PROJECT_DIR$/dataStructure">
+    <configuration name="noOverlappingInterval.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="noOverlappingInterval.js" working-dir="$PROJECT_DIR$/dataStructure">
       <method v="2" />
     </configuration>
-    <configuration name="testPromise.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="testPromise.js" working-dir="$PROJECT_DIR$/promise">
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/dataStructure">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.c.js" />
+        <item itemvalue="Node.js.noOverlappingInterval.js" />
+        <item itemvalue="Node.js.test.js" />
+        <item itemvalue="Node.js.mergingInterval.js" />
         <item itemvalue="Node.js.12-Sorting.js" />
-        <item itemvalue="Node.js.orderedArrayMedian.js" />
-        <item itemvalue="Node.js.longestSubstringWithoutRepetition.js" />
-        <item itemvalue="Node.js.index.js" />
-        <item itemvalue="Node.js.testPromise.js" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +316,12 @@
       <workItem from="1577946247973" duration="8344000" />
       <workItem from="1578294048145" duration="623000" />
       <workItem from="1578294982549" duration="27267000" />
-      <workItem from="1578470662627" duration="3410000" />
+      <workItem from="1578470662627" duration="26597000" />
+      <workItem from="1579222152236" duration="810000" />
+      <workItem from="1579252761722" duration="19710000" />
+      <workItem from="1581318783110" duration="599000" />
+      <workItem from="1583752743441" duration="34000" />
+      <workItem from="1583891583416" duration="135000" />
     </task>
     <task id="LOCAL-00001" summary="新建mvvm和observer">
       <created>1551866410989</created>
@@ -344,24 +414,44 @@
       <option name="project" value="LOCAL" />
       <updated>1578384077181</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix:测试案例修改">
+      <created>1578474534246</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1578474534246</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix：增加合并区间案例">
+      <created>1578479338204</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1578479338204</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix：增加合并区间案例">
+      <created>1578553497344</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1578553497345</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102759000" />
+    <option name="totallyTimeSpent" value="147234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18282403" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13991553" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23210412" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26030368" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31344903" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.25921908" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -384,7 +474,9 @@
     <MESSAGE value="feat：增加手写promise" />
     <MESSAGE value="feat：获取无重复最长子字符串" />
     <MESSAGE value="feat：切分法实现寻找两个有序数组的中位数" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat：切分法实现寻找两个有序数组的中位数" />
+    <MESSAGE value="fix:测试案例修改" />
+    <MESSAGE value="fix：增加合并区间案例" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix：增加合并区间案例" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vuePrinciple/mvvm.js" />
@@ -449,19 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataStructure/11-Graph.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataStructure/9-Set.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dataStructure/10-BST.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -483,18 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-294">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-          <folding>
-            <element signature="n#!!block;n#HashSet#0" />
-            <element signature="n#!!block;n#lengthOfLongestSubstring#0" />
-            <element signature="n#!!block;n#lengthOfLongestSubstringOptimization#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -520,19 +587,91 @@
     <entry file="file://$PROJECT_DIR$/dataStructure/14-Senior.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/test.js" />
+    <entry file="file://$PROJECT_DIR$/a.js" />
+    <entry file="file://$PROJECT_DIR$/b.js" />
+    <entry file="file://$PROJECT_DIR$/c.js" />
+    <entry file="file://$PROJECT_DIR$/ES6/Module.css" />
     <entry file="file://$PROJECT_DIR$/dataStructure/orderedArrayMedian.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="66">
           <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/6-LinkedList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#find#0;n#!!block;n#LList#0" />
+            <element signature="n#!!block;n#insert#0;n#!!block;n#LList#0" />
+            <element signature="n#!!block;n#display#0;n#!!block;n#LList#0" />
+            <element signature="n#!!block;n#findPrevious#0;n#!!block;n#LList#0" />
+            <element signature="n#!!block;n#remove#0;n#!!block;n#LList#0" />
+            <element signature="n#!!block;n#findLast#0;n#!!block;n#LList#0" />
+            <element signature="n#!!block;n#dispReverse#0;n#!!block;n#LList#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/mergingInterval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/noOverlappingInterval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ES6/Module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1474">
+          <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/11-Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="85" column="19" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dataStructure/12-Sorting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="259" column="40" lean-forward="true" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
+        <state relative-caret-position="2530">
+          <caret line="150" column="20" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/9-Set.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="74" column="16" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataStructure/longestSubstringWithoutRepetition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="n#!!block;n#HashSet#0" />
+            <element signature="n#!!block;n#lengthOfLongestSubstring#0" />
+            <element signature="n#!!block;n#lengthOfLongestSubstringOptimization#0" />
           </folding>
         </state>
       </provider>
