@@ -14,7 +14,6 @@ function Promise(executor) {
     if (self.status === 'pending') {
       self.status = 'resolved'
       self.value = value
-      console.log(self.onFulfilledCallbacks)
       self.onFulfilledCallbacks.forEach(fn => {
         fn()
       })
