@@ -1,4 +1,4 @@
-let Promise = require('./promise')
+let Promise = require('./reviewPromise')
 
 // let thenable = {
 //   then: function(resolve, reject) {
@@ -17,4 +17,3 @@ var a = new Promise((resolve, reject) => {
 }).then(data => {
   console.log(data)
 })
-console.log(a)
