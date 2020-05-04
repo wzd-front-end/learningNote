@@ -38,15 +38,15 @@ function resolvePromise(promise, x, resolve, reject) {
 
       if (typeof then === 'function') {
         then.call(x, (y) => {
-            if (called) return
-            called = true
-            resolvePromise(promise, y, resolve, reject)
-          },
-          (e) => {
-            if (called) return
-            called = true
-            reject(e)
-          })
+              if (called) return
+              called = true
+              resolvePromise(promise, y, resolve, reject)
+            },
+            (e) => {
+              if (called) return
+              called = true
+              reject(e)
+            })
       } else {
         resolve(x)
       }
@@ -123,27 +123,80 @@ Promise.prototype.catch = function (errFn) {
 
 Promise.prototype.finally = function (fn) {
   this.then(
-    () => {
-      fn()
-    },
-    () => {
-      fn()
-    }
+      () => {
+        fn()
+      },
+      () => {
+        fn()
+      }
   )
 }
 
-Promise.prototype.race = function(promises) {
+Promise.prototype.race = function (promises) {
+  return new Promise((resolve, reject) => {
+    function checkPromise(curr) {
+      if (curr && curr.then && typeof curr.then === 'function') {
+        curr.then(
+            data => {
+              checkPromise(data)
+            },
+            reject
+        )
+      }
 
+    }
+
+    for (let i = 0; i < promises.length; i++) {
+      let current = promises[i]
+      checkPromise(current)
+    }
+  })
 }
 
-Promise.prototype.all = function(promises) {
+Promise.prototype.all = function (promises) {
+  return new Promise((resolve, reject) => {
+    let length = promises.length === undefined ? Object.keys(promises).length : promises.length
+    if (length === 0) {
+      reject(new Error('参数为空'))
+      return
+    }
+    let results = promises.length === undefined ? {} : []
+    let index = 0
 
+    function processData(key, data) {
+      results[key] = data
+      index++
+      if (index === length) {
+        resolve(results)
+      }
+    }
+
+    function checkPromise(i, curr) {
+      if (curr && curr.then && typeof curr.then === 'undefined') {
+        curr.then(
+            data => {
+              checkPromise(data)
+            },
+            reject
+        )
+      } else {
+        processData(i, curr)
+        return
+      }
+    }
+
+    for (let key in promises) {
+      let current = promises[key]
+      checkPromise(key, current)
+    }
+
+  })
 }
 
-Promise.resolve = function(value) {
-  if(value instanceof Promise){
+Promise.resolve = function (value) {
+  if (value instanceof Promise) {
     return Promise
-  } else if(value && value.then && (typeof value.then === 'function')){
+  } else if (value && value.then && (typeof value.then === 'function')) {
     return new Promise((resolve, reject) => {
       value.then(resolve, reject)
     })
@@ -154,8 +207,8 @@ Promise.resolve = function(value) {
   }
 }
 
-Promise.reject = function(reason){
-  return new Promise((resolve,reject) => {
+Promise.reject = function (reason) {
+  return new Promise((resolve, reject) => {
     reject(reason)
   })
 }

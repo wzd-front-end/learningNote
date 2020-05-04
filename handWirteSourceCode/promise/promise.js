@@ -133,12 +133,12 @@ Promise.prototype.catch = function (errFn) {
 // finally方法
 Promise.prototype.finally = function (fn) {
   this.then(
-    () => {
-      fn()
-    },
-    () => {
-      fn()
-    }
+      () => {
+        fn()
+      },
+      () => {
+        fn()
+      }
   )
   return this
 }
