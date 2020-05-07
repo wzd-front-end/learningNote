@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>时钟</title>
+</head>
+<body>
+<canvas id="canvas" height="400" width="400">1111</canvas>
+
+</body>
+<script>
+let canvas = document.getElementById('canvas')
+var ctx = canvas.getContext('2d');
+// 时钟内圈半径
+var centerBallRadius = 150;
+// 时钟内圈环宽度
+var centerBallRange = 5;
+// 时钟外圈环宽度
+var outerBallRange = 10;
+// 时钟内圈环颜色
+var centerBallColor = '#000';
+// 时钟外圈环颜色
+var outerBallColor = '#bdbcba';
+// 时钟外环线条宽度
+var outerLineWidth = 1;
+// 时钟刻度标记颜色
+var clockMarkColor = '#ffffff';
+// 时钟刻度标记尺寸
+var clockMarkWidth = 4;
+// 时钟3,6,9,12刻度标记半径
+var clockMarkCircleRadius = 3;
+// 时钟刻度线宽度
+var clockMarkLineWidth = 1;
+// 时钟刻度线与3,6,9,12刻度尺寸差
+var sperateWidth = 2;
+// 时钟字体大小
+var fontSize = 14;
+// 时钟字体颜色
+var fontColor = '#ffffff';
+// 时钟水印颜色
+var fontWaterColor = 'rgba(255,255,255,0.5)';
+// 时钟中心点颜色
+var indicatorColor = '#ffffff';
+// 时钟中心点圆半径
+var indicatorBallRadius = 5;
+// 时钟秒针颜色
+var indicatorSecondColor = '#ff0000';
+
+
+function drawClock() {
+  var width = document.getElementById('canvas').clientWidth
+  var height = document.getElementById('canvas').clientHeight
+  ctx.clearRect(0, 0, width, height)
+
+  var centerX = width / 2
+  var centerY = height / 2
+  drawClockBall(centerX, centerY)
+
+}
+
+function drawClockBall(centerX, centerY) {
+  ctx.strokeStyle = outerBallColor
+  ctx.lineWidth = outerBallRange
+  ctx.beginPath()
+  ctx.arc(centerX, centerY, centerBallRadius + outerBallRange, 0, 2 * Math.PI)
+  ctx.stroke();
+  ctx.closePath()
+
+  ctx.strokeStyle = centerBallColor
+  ctx.lineWidth = outerLineWidth
+  ctx.beginPath()
+  ctx.arc(centerX, centerY, centerBallRadius + outerBallRange * 3 / 2, 0, 2 * Math.PI)
+  ctx.stroke();
+  ctx.closePath()
+
+  ctx.strokeStyle = centerBallColor
+  ctx.lineWidth = centerBallRange
+  ctx.beginPath()
+  ctx.arc(centerX, centerY, centerBallRadius + centerBallRange, 0, 2 * Math.PI)
+  ctx.stroke();
+  ctx.closePath()
+}
+
+window.onload = function () {
+  drawClock()
+}
+
+</script>
+</html>
