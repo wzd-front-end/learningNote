@@ -50,13 +50,13 @@ function drawClock() {
   var width = document.getElementById('canvas').clientWidth
   var height = document.getElementById('canvas').clientHeight
   ctx.clearRect(0, 0, width, height)
-
   var centerX = width / 2
   var centerY = height / 2
   drawClockBall(centerX, centerY)
   drawClockMark(centerX, centerY)
   drawIndicatorFun(centerX, centerY)
-  requestAnimationFrame(drawClock)
+  // requestAnimationFrame(drawClock)
+  setTimeout(drawClock, 500)
 }
 
 function drawClockBall(centerX, centerY) {
