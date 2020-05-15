@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .test {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<img src="circle.svg">
+
+<div id="test" style="color: red" class="test">
+  DOM节点
+</div>
+<div id="parent">
+  <a id="downLoad" download>下载</a>
+</div>
+<script>
+var node = document.getElementById('test')
+
+var xml = new XMLSerializer().serializeToString(node)
+console.log(node.xml)
+console.log(xml)
+var svgXml =
+  '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
+
+  '<circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />' +
+  '<foreignObject x="0" y="0" width="100%" height="100%">' +
+  '<div xmlns="http://www.w3.org/1999/xhtml" class="test" id="test" style="color: red">img标签src追加</div>' +
+  '</foreignObject>' +
+  '</svg>'
+
+var svg = new Blob([svgXml], {type: 'image/svg+xml'})
+var url = window.URL.createObjectURL(svg)
+
+
+function dataURLtoFile(dataurl, filename) {
+  let arr = dataurl.split(',')
+  let mime = arr[0].match(/:(.*?);/)[1]
+  let bstr = atob(arr[1])
+  let n = bstr.length
+  let u8arr = new Uint8Array(n)
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+  return new File([u8arr], filename, {type: mime})
+}
+
+function makeImage(uri) {
+  return new Promise(function (resolve, reject) {
+    var image = new Image()
+    image.onload = function () {
+      document.getElementById('downLoad').setAttribute('href', uri)
+      resolve(image)
+    }
+    image.onerror = reject
+    image.src = uri
+  })
+}
+
+makeImage(url).then((image) => {
+  document.getElementById('parent').appendChild(image)
+
+}).catch((error) => {
+  console.log(error)
+})
+</script>
+</body>
+</html>
