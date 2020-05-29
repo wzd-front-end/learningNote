@@ -10,7 +10,11 @@
   </style>
 </head>
 <body>
-
+<div>
+  <div id="t"></div>
+  <input type="text" id='text' value="">
+  <input type="button" id="s" value="write" onclick="test()">
+</div>
 <!--<img src="circle.svg">-->
 
 <div id="printBills" class="test"
@@ -98,56 +102,62 @@
   <a id="downLoad" download>下载</a>
 </div>
 <script>
-  var node = document.getElementById('printBills')
-  var style = null
-  if (window.getComputedStyle) {
-    style = window.getComputedStyle(node, null)
-  } else {
-    style = node.currentStyle
+function test() {
+  var src = document.getElementById('text').value
+  document.getElementById('t').innerHTML = "<a href= '" + src + "' >testLink</a>"
+}
+</script>
+<script>
+var node = document.getElementById('printBills')
+var style = null
+if (window.getComputedStyle) {
+  style = window.getComputedStyle(node, null)
+} else {
+  style = node.currentStyle
+}
+console.log(style.cssText)
+var xml = new XMLSerializer().serializeToString(node)
+
+var svgXml =
+  '<svg xmlns="http://www.w3.org/2000/svg" width="' + style.width + '" height="' + style.height + '">' +
+  '<foreignObject x="0" y="0" width="100%" height="100%">' + xml +
+  '</foreignObject>' +
+  '</svg>'
+
+var svg = new Blob([svgXml], {type: 'image/svg+xml'})
+var url = window.URL.createObjectURL(svg)
+
+
+function dataURLtoFile(dataurl, filename) {
+  let arr = dataurl.split(',')
+  let mime = arr[0].match(/:(.*?);/)[1]
+  let bstr = atob(arr[1])
+  let n = bstr.length
+  let u8arr = new Uint8Array(n)
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
   }
-  console.log(style.cssText)
-  var xml = new XMLSerializer().serializeToString(node)
+  return new File([u8arr], filename, {type: mime})
+}
 
-  var svgXml =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="' + style.width + '" height="' + style.height + '">' +
-      '<foreignObject x="0" y="0" width="100%" height="100%">' + xml +
-      '</foreignObject>' +
-      '</svg>'
-
-  var svg = new Blob([svgXml], {type: 'image/svg+xml'})
-  var url = window.URL.createObjectURL(svg)
-
-
-  function dataURLtoFile(dataurl, filename) {
-    let arr = dataurl.split(',')
-    let mime = arr[0].match(/:(.*?);/)[1]
-    let bstr = atob(arr[1])
-    let n = bstr.length
-    let u8arr = new Uint8Array(n)
-    while (n--) {
-      u8arr[n] = bstr.charCodeAt(n)
+function makeImage(uri) {
+  return new Promise(function (resolve, reject) {
+    var image = new Image()
+    image.onload = function () {
+      document.getElementById('downLoad').setAttribute('href', uri)
+      resolve(image)
     }
-    return new File([u8arr], filename, {type: mime})
-  }
-
-  function makeImage(uri) {
-    return new Promise(function (resolve, reject) {
-      var image = new Image()
-      image.onload = function () {
-        document.getElementById('downLoad').setAttribute('href', uri)
-        resolve(image)
-      }
-      image.onerror = reject
-      image.src = uri
-    })
-  }
-
-  makeImage(url).then((image) => {
-    document.getElementById('parent').appendChild(image)
-
-  }).catch((error) => {
-    console.log(error)
+    image.onerror = reject
+    image.src = uri
   })
+}
+
+makeImage(url).then((image) => {
+  document.getElementById('parent').appendChild(image)
+
+}).catch((error) => {
+  console.log(error)
+})
 </script>
 </body>
 </html>
