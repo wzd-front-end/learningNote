@@ -1,12 +1,14 @@
 function Promise(executor) {
-  let self = this
-  self.status = 'pending'
-  self.value = null
-  self.reason = null
-  self.onFulfilledCallbacks = []
-  self.onRejectedCallbacks = []
+  const self = this
 
-  function resovle(value) {
+  this.status = 'pending'
+  this.value = null
+  this.reason = null
+
+  this.onFulfilledCallbacks = []
+  this.onRejectedCallbacks = []
+
+  function resolve(value) {
     self.status = 'resolved'
     self.value = value
     self.onFulfilledCallbacks.forEach(fn => {
@@ -22,7 +24,7 @@ function Promise(executor) {
     })
   }
 
-  executor(resovle, reject)
+  executor(resolve, reject)
 }
 
 function resolvePromise(promise, x, resolve, reject) {
@@ -31,22 +33,23 @@ function resolvePromise(promise, x, resolve, reject) {
   }
 
   let called
-
-  if (x !== null && (typeof x === 'function' || typeof x === 'object')) {
+  if (x !== null && (typeof x === 'object' || typeof x === 'function')) {
     try {
       let then = x.then
 
       if (typeof then === 'function') {
-        then.call(x, (y) => {
-              if (called) return
-              called = true
-              resolvePromise(promise, y, resolve, reject)
-            },
-            (e) => {
-              if (called) return
-              called = true
-              reject(e)
-            })
+        then.call(x,
+          (y) => {
+            if (called) return
+            called = true
+            resolve(promise, y, resolve, reject)
+          },
+          (e) => {
+            if (called) return
+            called = true
+            reject(e)
+          }
+        )
       } else {
         resolve(x)
       }
@@ -61,35 +64,16 @@ function resolvePromise(promise, x, resolve, reject) {
 }
 
 Promise.prototype.then = function (onFulfilled, onRejected) {
-  onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : val => val
-  onRejected = typeof onRejected === 'function' ? onRejected : err => {
-    throw err
+  onFulfilled = (typeof onFulfilled === 'function') ? onFulfilled : val => val
+  onRejected = (typeof onRejected === 'function') ? onRejected : error => {
+    throw error
   }
+
   let self = this
   let promise = new Promise((resolve, reject) => {
     switch (self.status) {
-      case "resolved":
-        setTimeout(() => {
-          try {
-            let x = onFulfilled(self.value)
-            resolvePromise(promise, x, resolve, reject)
-          } catch (e) {
-            reject(e)
-          }
-        }, 0)
-        break
-      case "rejected":
-        setTimeout(() => {
-          try {
-            let x = onRejected(self.reason)
-            resolvePromise(promise, x, resolve, reject)
-          } catch (e) {
-            reject(e)
-          }
-        }, 0)
-        break
       case "pending":
-        self.onFulfilledCallbacks.push(function () {
+        self.onFulfilledCallbacks.push(() => {
           setTimeout(() => {
             try {
               let x = onFulfilled(self.value)
@@ -99,7 +83,8 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
             }
           }, 0)
         })
-        self.onRejectedCallbacks.push(function () {
+
+        self.onRejectedCallbacks.push(() => {
           setTimeout(() => {
             try {
               let x = onRejected(self.reason)
@@ -107,13 +92,31 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
             } catch (e) {
               reject(e)
             }
-          })
-        }, 0)
+          }, 0)
+        })
+        break
+      case "rejected":
+        try {
+          setTimeout(() => {
+            let x = onRejected(self.reason)
+            resolvePromise(promise, x, resolve, reject)
+          }, 0)
+        } catch (e) {
+          reject(e)
+        }
+        break
+      case "resolved":
+        try {
+          setTimeout(() => {
+            let x = onFulfilled(self.value)
+            resolvePromise(promise, x, resolve, reject)
+          }, 0)
+        } catch (e) {
+          reject(e)
+        }
         break
     }
-
   })
-
   return promise
 }
 
@@ -122,81 +125,18 @@ Promise.prototype.catch = function (errFn) {
 }
 
 Promise.prototype.finally = function (fn) {
-  this.then(
-      () => {
-        fn()
-      },
-      () => {
-        fn()
-      }
-  )
-}
-
-Promise.prototype.race = function (promises) {
-  return new Promise((resolve, reject) => {
-    function checkPromise(curr) {
-      if (curr && curr.then && typeof curr.then === 'function') {
-        curr.then(
-            data => {
-              checkPromise(data)
-            },
-            reject
-        )
-      }
-
-    }
-
-    for (let i = 0; i < promises.length; i++) {
-      let current = promises[i]
-      checkPromise(current)
-    }
-  })
-}
-
-Promise.prototype.all = function (promises) {
-  return new Promise((resolve, reject) => {
-    let length = promises.length === undefined ? Object.keys(promises).length : promises.length
-    if (length === 0) {
-      reject(new Error('参数为空'))
-      return
-    }
-    let results = promises.length === undefined ? {} : []
-    let index = 0
-
-    function processData(key, data) {
-      results[key] = data
-      index++
-      if (index === length) {
-        resolve(results)
-      }
-    }
-
-    function checkPromise(i, curr) {
-      if (curr && curr.then && typeof curr.then === 'undefined') {
-        curr.then(
-            data => {
-              checkPromise(data)
-            },
-            reject
-        )
-      } else {
-        processData(i, curr)
-        return
-      }
-    }
-
-    for (let key in promises) {
-      let current = promises[key]
-      checkPromise(key, current)
-    }
-
-  })
+  return this.then(() => {
+      fn()
+    },
+    () => {
+      fn()
+    })
 }
 
 Promise.resolve = function (value) {
   if (value instanceof Promise) {
-    return Promise
-  } else if (value && value.then && (typeof value.then === 'function')) {
+    return value
+  } else if (value && value.then && typeof value.then === 'function') {
     return new Promise((resolve, reject) => {
       value.then(resolve, reject)
     })
@@ -213,5 +153,62 @@ Promise.reject = function (reason) {
   })
 }
 
+Promise.all = function (promises) {
+  return new Promise((resolve, reject) => {
+    if (typeof promises !== 'object') {
+      reject(new Error("参数类型必须为数组或对象!"))
+      return
+    }
+    let length = promises.length === undefined ? Object.keys(promises).length : promises.length
+    if (length === 0) {
+      reject(new Error('参数为空'))
+      return
+    }
+    let results = promises.length === undefined ? {} : [];
+    let index = 0
 
-module.exports = Promise
+    function processData(key, data) {
+      results[key] = data
+      index++
+      if (index === length) {
+        resolve(results)
+      }
+    }
+
+    function checkPromise(curr, key) {
+      if (curr && curr.then && typeof curr.then === 'function') {
+        try {
+          curr.then(data => {
+            checkPromise(data, key)
+          }, reject)
+        } catch (e) {
+          reject(e)
+        }
+      } else {
+        processData(key, curr)
+      }
+    }
+
+    for (let i = 0; i < length; i++) {
+      checkPromise(promises[i], i)
+    }
+  })
+}
+
+Promise.race = function (promises) {
+  return new Promise((resolve, reject) => {
+    function checkPromise(curr) {
+      if (curr && curr.then && typeof curr.then === 'function') {
+        curr.then(data => {
+          checkPromise(data)
+        }, reject)
+      } else {
+        resolve(curr)
+      }
+    }
+
+    for (let i = 0; i < promises.length; i++) {
+      checkPromise(promises[i])
+    }
+  })
+}

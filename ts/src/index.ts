@@ -1,1 +1,2 @@
-let num: number = 123
+import './example/interface'
+import './example/class'
