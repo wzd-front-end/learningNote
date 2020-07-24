@@ -14,3 +14,5 @@ Function.prototype.binds = function (context) {
     }
   }
 }
+
+
