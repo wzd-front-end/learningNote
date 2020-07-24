@@ -130,7 +130,7 @@ function CArray() {
   // 插入排序，（注：第二次循环不会全部执行）
   function insertionSort() {
     var temp, inner, numElements = this.dataStore.length
-    
+
     for (var outer = 1; outer <= numElements - 1; outer++) {
       temp = this.dataStore[outer]
       inner = outer
@@ -241,8 +241,9 @@ function CArray() {
       let temp = arr[left];
       arr[left] = arr[mid];
       arr[mid] = temp;
+
       let pivot = arr[left];
-      while (i < j) { 
+      while (i < j) {
         while (arr[j] >= pivot && i < j) {  // 从后往前找比基准小的数
           j--;
         }
