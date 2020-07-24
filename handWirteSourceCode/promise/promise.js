@@ -214,7 +214,7 @@ Promise.resolve = function (value) {
     return new Promise((resolve, reject) => {
       resolve(value);
     })
-  }bh
+  }
 }
 
 Promise.defer = Promise.deferred = function () {
