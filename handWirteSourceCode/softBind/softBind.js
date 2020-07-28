@@ -1,3 +1,4 @@
+// 软绑定的关键点在于，如果this存在，则说明其同过其他方式调用，包括隐式调用和显式调用
 if(!Function.prototype.softBind){
   Function.prototype.softBind = function (obj) {
     var fn = this
