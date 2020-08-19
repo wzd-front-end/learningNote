@@ -5,6 +5,29 @@
   <title>Title</title>
 </head>
 <body>
+<video src="catVideo.mp4" controls="controls" id="video">您的浏览器不支持video标签</video>
+<script>
+let video = document.getElementById('video')
+// 设置或返回是否在加载完成后随即播放音频/视频
+console.log("设置或返回是否在加载完成后随即播放音频/视频：" + video.autoplay)
+// 返回表示音频/视频已缓冲部分的 TimeRanges 对象
+console.log("返回表示音频/视频已缓冲部分的 TimeRanges 对象" + video.buffered)
+// 返回表示音频/视频当前媒体控制器的 MediaController 对象
+console.log("返回表示音频/视频当前媒体控制器的 MediaController 对象" + video.controller)
 
+// 设置或返回音频/视频的默认播放速度
+console.log("设置或返回音频/视频的默认播放速度：" + video.defaultPlaybackRate)
+// 返回当前音频/视频的长度（以秒计）,注意，这个值的获取，需要资源加载后才可以获得
+console.log("返回当前音频/视频的长度（以秒计）：" + video.duration)
+// 返回音频/视频的当前网络状态
+// 0 = NETWORK_EMPTY - 音频/视频尚未初始化
+// 1 = NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络
+// 2 = NETWORK_LOADING - 浏览器正在下载数据
+// 3 = NETWORK_NO_SOURCE - 未找到音频/视频来源
+console.log("返回音频/视频的当前网络状态：" + video.networkState)
+// 设置或返回音频/视频播放的速度
+console.log("设置或返回音频/视频播放的速度：" + video.playbackRate)
+
+</script>
 </body>
 </html>
